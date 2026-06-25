@@ -6,9 +6,11 @@ echo "Building JAR locally..."
 mvn package -DskipTests -P!dev -q
 
 echo "Building Docker image for deployment..."
-cp target/wordie-1.0.0.jar docker/
-docker build -t wordie -f docker/Dockerfile.prod docker/
-rm docker/wordie-1.0.0.jar
+TMPDIR=$(mktemp -d)
+cp target/wordie-1.0.0.jar "$TMPDIR/"
+cp docker/Dockerfile.prod "$TMPDIR/Dockerfile"
+docker build -t wordie "$TMPDIR"
+rm -rf "$TMPDIR"
 
 echo "Done. Image 'wordie' built. Push to your registry with:"
 echo "  docker tag wordie <registry>/wordie:latest && docker push <registry>/wordie:latest"
