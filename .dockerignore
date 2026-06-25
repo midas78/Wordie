@@ -1,0 +1,7 @@
+target/
+data/
+._*
+.DS_Store
+*.iml
+.git/
+.idea/
