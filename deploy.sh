@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+set -euo pipefail
+cd "$(dirname "$0")"
+
+echo "Building JAR locally..."
+mvn package -DskipTests -P!dev -q
+
+echo "Building Docker image for deployment..."
+cp target/wordie-1.0.0.jar docker/
+docker build -t wordie -f docker/Dockerfile.prod docker/
+rm docker/wordie-1.0.0.jar
+
+echo "Done. Image 'wordie' built. Push to your registry with:"
+echo "  docker tag wordie <registry>/wordie:latest && docker push <registry>/wordie:latest"
