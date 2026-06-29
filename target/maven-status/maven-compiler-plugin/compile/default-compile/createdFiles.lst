@@ -1,4 +1,5 @@
 com/wordie/config/DataLoader.class
+com/wordie/controller/HealthController.class
 com/wordie/repository/GameRepository.class
 com/wordie/repository/WordRepository.class
 com/wordie/model/AppUser.class

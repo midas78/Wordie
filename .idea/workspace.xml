@@ -4,69 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2792d36f-709a-49e8-81ca-5e43f8e32075" name="Changes" comment="Dockerfile Changes">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/wordie.mv.db" beforeDir="false" afterPath="$PROJECT_DIR$/data/wordie.mv.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/wordie.trace.db" beforeDir="false" afterPath="$PROJECT_DIR$/data/wordie.trace.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/game.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/help.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/favicon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/headerLogo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/hlpBtn.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/homeLogo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/setBtn.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/stBtn.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/login.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/set.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/WordieApplication.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/wordie/config/DataLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wordie/config/DataLoader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/wordie/config/WebConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wordie/config/WebConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/wordie/controller/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wordie/controller/GameController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/wordie/controller/HealthController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/wordie/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wordie/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/wordie/controller/WordController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wordie/controller/WordController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/wordie/model/AppUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wordie/model/AppUser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/wordie/model/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wordie/model/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/wordie/model/Word.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wordie/model/Word.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/wordie/repository/GameRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wordie/repository/GameRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/wordie/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wordie/repository/UserRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/wordie/repository/WordRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wordie/repository/WordRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/wordie/service/WordService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wordie/service/WordService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/favicon.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/images/favicon.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/headerLogo.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/images/headerLogo.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/headerLogo2.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/images/headerLogo2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/hlpBtn.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/images/hlpBtn.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/hlpBtn2.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/images/hlpBtn2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/homeLogo.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/images/homeLogo.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/homeLogo2.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/images/homeLogo2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/setBtn.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/images/setBtn.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/setBtn2.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/images/setBtn2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/stBtn.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/images/stBtn.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/stBtn2.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/images/stBtn2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/words.xls" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/words.xls" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stats.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/images/favicon.png" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/images/favicon.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/images/headerLogo.png" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/images/headerLogo.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/images/headerLogo2.png" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/images/headerLogo2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/images/hlpBtn.png" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/images/hlpBtn.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/images/hlpBtn2.png" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/images/hlpBtn2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/images/homeLogo.png" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/images/homeLogo.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/images/homeLogo2.png" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/images/homeLogo2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/images/setBtn.png" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/images/setBtn.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/images/setBtn2.png" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/images/setBtn2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/images/stBtn.png" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/images/stBtn.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/images/stBtn2.png" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/images/stBtn2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/words.xls" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/words.xls" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/wordie-1.0.0.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/wordie-1.0.0.jar.original" beforeDir="false" />
-    </list>
+    <list default="true" id="2792d36f-709a-49e8-81ca-5e43f8e32075" name="Changes" comment="Class Changes" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -251,7 +189,15 @@
       <option name="project" value="LOCAL" />
       <updated>1782706397019</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Class Changes">
+      <option name="closed" value="true" />
+      <created>1782719952924</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1782719952924</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -272,6 +218,7 @@
     <MESSAGE value=" updated classes &amp; pom.xml" />
     <MESSAGE value="adds health check endpoint" />
     <MESSAGE value="Dockerfile Changes" />
-    <option name="LAST_COMMIT_MESSAGE" value="Dockerfile Changes" />
+    <MESSAGE value="Class Changes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Class Changes" />
   </component>
 </project>
