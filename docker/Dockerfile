@@ -9,5 +9,5 @@ FROM --platform=linux/arm64 eclipse-temurin:21-jre
 WORKDIR /app
 COPY --from=build /app/target/wordie-1.0.0.jar app.jar
 EXPOSE 3000
-VOLUME /app/data
+RUN mkdir -p /tmp/wordie-db
 ENTRYPOINT ["java", "-jar", "app.jar"]
