@@ -4,7 +4,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2792d36f-709a-49e8-81ca-5e43f8e32075" name="Changes" comment="Changes Application Port Configuration" />
+    <list default="true" id="2792d36f-709a-49e8-81ca-5e43f8e32075" name="Changes" comment="Changes Data Directory">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/wordie.mv.db" beforeDir="false" afterPath="$PROJECT_DIR$/data/wordie.mv.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/game.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/game.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/help.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/help.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/set.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/set.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/stats.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/stats.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/game.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/game.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/help.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/help.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/set.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/set.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/stats.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/stats.html" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -213,7 +229,15 @@
       <option name="project" value="LOCAL" />
       <updated>1782723215435</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Changes Data Directory">
+      <option name="closed" value="true" />
+      <created>1782723846621</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1782723846621</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -236,6 +260,7 @@
     <MESSAGE value="Dockerfile Changes" />
     <MESSAGE value="Class Changes" />
     <MESSAGE value="Changes Application Port Configuration" />
-    <option name="LAST_COMMIT_MESSAGE" value="Changes Application Port Configuration" />
+    <MESSAGE value="Changes Data Directory" />
+    <option name="LAST_COMMIT_MESSAGE" value="Changes Data Directory" />
   </component>
 </project>

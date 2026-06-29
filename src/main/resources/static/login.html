@@ -3,6 +3,7 @@
 <head>
     <title>Wordie - Login</title>
     <link rel="icon" type="image/png" href="images/favicon.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
     <style>
         :root {
             --bg: #E3E3E1;
@@ -28,7 +29,7 @@
         }
         body {
             margin: 0;
-            min-height: 100vh;
+            min-height:90vh;
             background: var(--bg);
             font-family: 'American Typewriter';
             display: flex;
@@ -121,6 +122,10 @@
             display: block;
             width: 80px;
             margin: 0 auto 20px auto;
+        }
+        @media (max-width: 400px) {
+            .card { width: 85vw; padding: 20px; }
+            h1 { font-size: 22px; }
         }
     </style>
     <script>

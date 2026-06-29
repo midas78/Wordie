@@ -3,6 +3,7 @@
 <head>
     <title>Wordie - Settings</title>
     <link rel="icon" type="image/png" href="images/favicon.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
     <style>
         :root {
             --bg: white;
@@ -71,6 +72,10 @@
         }
         .switch input:checked + .slider::before {
             transform: translateX(24px);
+        }
+        @media (max-width: 400px) {
+            body { padding: 15px; font-size: 16px; }
+            h1 { font-size: 20px; }
         }
     </style>
 </head>

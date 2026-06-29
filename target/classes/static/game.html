@@ -2,6 +2,7 @@
     <head>
         <title>Wordie - A game of words</title>
         <link rel="icon" type="image/png" href="images/favicon.png">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap" rel="stylesheet">
@@ -73,7 +74,7 @@
                 position:absolute;
                 width:150px;
                 height: auto;
-                margin-left: 45vw;
+                right: 8px;
                 margin-top:-1px;
             }
             .btn:hover{
@@ -207,6 +208,24 @@
                 text-align: center;
                 margin: 10px 0;
                 color: var(--msg-color);
+            }
+            @media (max-width: 550px) {
+                #menu { margin-left: auto; right: 8px; }
+                #board { margin-top: 3vh; }
+                #keys { margin-top: 8px; }
+                #board td div { width: 11vw; height: 11vw; font-size: 5.5vw; }
+                .keybd div { width: 7.5vw; height: 11vw; font-size: 3.5vw; }
+                .keybd .long { width: 11vw; font-size: 2.5vw; }
+                #header-logo { width: 20vw; }
+                #menu li img { width: 8vw; }
+            }
+            @media (max-width: 400px) {
+                #board td div { width: 13vw; height: 13vw; font-size: 6.5vw; }
+                .keybd div { width: 8.5vw; height: 12vw; font-size: 4vw; }
+                .keybd .long { width: 12vw; font-size: 2.5vw; }
+                .keybd td { padding: 1px; }
+                #header-logo { width: 22vw; }
+                #menu li img { width: 9vw; }
             }
         </style>
 

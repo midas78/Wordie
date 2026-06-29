@@ -3,6 +3,7 @@
 <head>
     <title>Wordie - Help</title>
     <link rel="icon" type="image/png" href="images/favicon.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
     <style>
         :root {
             --bg: #E3E3E1;
@@ -78,6 +79,11 @@
             background-color: var(--tile-empty-bg);
             border: 2px solid var(--border);
             color: var(--tile-empty-text);
+        }
+        @media (max-width: 400px) {
+            .content { max-width: 88vw; padding: 15px; }
+            h1 { font-size: 22px; }
+            .tile { width: 9vw; height: 9vw; font-size: 4.5vw; }
         }
     </style>
     <script>

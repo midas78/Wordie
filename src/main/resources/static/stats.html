@@ -3,6 +3,7 @@
 <head>
     <title>Wordie - Stats</title>
     <link rel="icon" type="image/png" href="images/favicon.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
     <style>
         :root {
             --bg: white;
@@ -122,6 +123,12 @@
         }
         .not-logged-in a {
             color: var(--text);
+        }
+        @media (max-width: 400px) {
+            .stats-row { gap: 10px; }
+            .stat-box { padding: 10px 15px; min-width: 60px; }
+            .stat-number { font-size: 26px; }
+            .dist-section { max-width: 92vw; }
         }
     </style>
     <script>
