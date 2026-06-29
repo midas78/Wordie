@@ -125,15 +125,8 @@
     </style>
     <script>
         (function() {
-            function apply(t) {
-                document.documentElement.setAttribute('data-theme', t);
-                var logo = document.querySelector('.logo');
-                if (logo) logo.src = 'images/headerLogo' + (t === 'dark' ? '2' : '') + '.png';
-            }
-            apply(localStorage.getItem('theme') || 'light');
-            window.addEventListener('message', function(e) {
-                if (e.data && e.data.theme) apply(e.data.theme);
-            });
+            var t = localStorage.getItem('theme') || 'light';
+            document.documentElement.setAttribute('data-theme', t);
         })();
     </script>
 </head>
