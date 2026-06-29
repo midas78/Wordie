@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="2792d36f-709a-49e8-81ca-5e43f8e32075" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/data/wordie.mv.db" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/wordie.trace.db" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/game.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/help.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/favicon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/headerLogo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/hlpBtn.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/homeLogo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/setBtn.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/stBtn.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/login.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/set.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stats.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.dockerignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations/WordieApplication.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/docker/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/Dockerfile.prod" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/compose.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/docker/compose.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/settings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/run.sh" beforeDir="false" afterPath="$PROJECT_DIR$/run.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/wordie/config/DataLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wordie/config/DataLoader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/wordie/config/WebConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wordie/config/WebConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/wordie/controller/WordController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wordie/controller/WordController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/wordie/model/AppUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wordie/model/AppUser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/wordie/model/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wordie/model/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/wordie/model/Word.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wordie/model/Word.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/wordie/repository/GameRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wordie/repository/GameRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/wordie/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wordie/repository/UserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/wordie/repository/WordRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wordie/repository/WordRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/wordie/service/WordService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wordie/service/WordService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/help.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/help.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/favicon.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/images/favicon.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/headerLogo.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/images/headerLogo.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/headerLogo2.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/images/headerLogo2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/hlpBtn.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/images/hlpBtn.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/hlpBtn2.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/images/hlpBtn2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/homeLogo.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/images/homeLogo.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/setBtn.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/images/setBtn.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/setBtn2.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/images/setBtn2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/stBtn.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/images/stBtn.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/stBtn2.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/images/stBtn2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/words.xls" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/words.xls" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/midas78/Wordie.git",
+    "accountId": "fce824bd-d042-4294-bd3d-d510033076f0"
+  }
+}]]></component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 6
+}]]></component>
+  <component name="ProjectId" id="3Fn4CwRBJalbmVkYShNT10OitMA" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.WordieApplication.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/Users/midas/Desktop/wordieGit",
+    "settings.editor.selected.configurable": "org.jetbrains.plugins.github.ui.GithubSettingsConfigurable"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="JetRunConfigurationType">
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <option name="filePath" />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="2792d36f-709a-49e8-81ca-5e43f8e32075" name="Changes" comment="" />
+      <created>1782697375091</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1782697375091</updated>
+    </task>
+    <servers />
+  </component>
+</project>
