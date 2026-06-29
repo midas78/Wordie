@@ -3,9 +3,7 @@ package com.wordie.controller;
 import com.wordie.model.Word;
 import com.wordie.service.WordService;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Map;
 
@@ -19,12 +17,20 @@ public class WordController {
         this.wordService = wordService;
     }
 
-    @GetMapping("/daily")
-    public ResponseEntity<?> getDailyWord() {
+    @GetMapping("/random")
+    public ResponseEntity<Map<String, String>> getRandomWord() {
         Word word = wordService.getRandomWord();
-        if (word == null) {
-            return ResponseEntity.notFound().build();
-        }
         return ResponseEntity.ok(Map.of("word", word.getWord()));
+    }
+
+    @GetMapping("/validate/{word}")
+    public ResponseEntity<Map<String, Boolean>> validateWord(@PathVariable String word) {
+        boolean valid = wordService.isValidWord(word);
+        return ResponseEntity.ok(Map.of("valid", valid));
+    }
+
+    @GetMapping("/count")
+    public ResponseEntity<Map<String, Long>> getWordCount() {
+        return ResponseEntity.ok(Map.of("count", wordService.getWordCount()));
     }
 }

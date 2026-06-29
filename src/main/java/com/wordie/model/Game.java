@@ -3,21 +3,21 @@ package com.wordie.model;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "game")
+@Table(name = "games")
 public class Game {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne
     @JoinColumn(name = "user_id", nullable = false)
     private AppUser user;
 
     @Column(nullable = false)
     private boolean won;
 
-    @Column(nullable = false)
+    @Column(name = "guess_num", nullable = false)
     private int guessNum;
 
     public Game() {}

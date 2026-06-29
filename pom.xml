@@ -47,7 +47,7 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
-                    <mainClass>com.WordieApplication</mainClass>
+                    <mainClass>com.wordie.WordieApplication</mainClass>
                 </configuration>
             </plugin>
 
