@@ -1,0 +1,13 @@
+/Users/midas/Desktop/wordieGit/src/main/java/com/WordieApplication.java
+/Users/midas/Desktop/wordieGit/src/main/java/com/wordie/config/DataLoader.java
+/Users/midas/Desktop/wordieGit/src/main/java/com/wordie/config/WebConfig.java
+/Users/midas/Desktop/wordieGit/src/main/java/com/wordie/controller/GameController.java
+/Users/midas/Desktop/wordieGit/src/main/java/com/wordie/controller/UserController.java
+/Users/midas/Desktop/wordieGit/src/main/java/com/wordie/controller/WordController.java
+/Users/midas/Desktop/wordieGit/src/main/java/com/wordie/model/AppUser.java
+/Users/midas/Desktop/wordieGit/src/main/java/com/wordie/model/Game.java
+/Users/midas/Desktop/wordieGit/src/main/java/com/wordie/model/Word.java
+/Users/midas/Desktop/wordieGit/src/main/java/com/wordie/repository/GameRepository.java
+/Users/midas/Desktop/wordieGit/src/main/java/com/wordie/repository/UserRepository.java
+/Users/midas/Desktop/wordieGit/src/main/java/com/wordie/repository/WordRepository.java
+/Users/midas/Desktop/wordieGit/src/main/java/com/wordie/service/WordService.java

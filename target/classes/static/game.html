@@ -1,0 +1,561 @@
+<html>
+    <head>
+        <title>Wordie - A game of words</title>
+        <link rel="icon" type="image/png" href="images/favicon.png">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap" rel="stylesheet">
+    </head>
+        <header>
+            <img id="header-logo" src="images/headerLogo.png" alt="logo">
+            <ul id="menu">
+                <li class="btn"><img onclick="javascript:showMenu('stats')" id="stats" src="images/stBtn.png"></li>
+                <li class="btn"><img onclick="javascript:showMenu('help')" id="help" src="images/hlpBtn.png"></li>
+                <li class="btn"><img onclick="javascript:showMenu('set')" id="set" src="images/setBtn.png"></li>
+            </ul>
+        </header>
+        <style>
+            :root {
+                --bg: #ffffff;
+                --header-bg: white;
+                --header-border: #D6D9DD;
+                --tile-border: #D6D9DD;
+                --tile-text: black;
+                --tile-guess-border: #000000;
+                --key-bg: #D6D9DD;
+                --key-text: black;
+                --correct: #6AAA64;
+                --misplaced: #C9B458;
+                --wrong: #787C7E;
+                --btn-bg: black;
+                --btn-text: white;
+                --btn-hover: #333;
+                --msg-color: black;
+            }
+            [data-theme="dark"] {
+                --bg: #121213;
+                --header-bg: #1a1a1b;
+                --header-border: #3a3a3c;
+                --tile-border: #3a3a3c;
+                --tile-text: white;
+                --tile-guess-border: #565758;
+                --key-bg: #818384;
+                --key-text: white;
+                --correct: #538d4e;
+                --misplaced: #b59f3b;
+                --wrong: #3a3a3c;
+                --btn-bg: white;
+                --btn-text: black;
+                --btn-hover: #ccc;
+                --msg-color: white;
+            }
+            html{
+                overflow-x: hidden;
+            }
+            header{
+                height: 43px;
+                border-bottom: 1px solid var(--header-border);
+                background: var(--header-bg);
+            }
+            body{
+                width:100vw;
+                margin: 0;
+                background: var(--bg);
+            }
+            #header-logo{
+                width:90px;
+                height:auto;
+                margin-top:10px;
+                margin-left: 2%;
+            }
+            #menu{
+                display:inline-block;
+                position:absolute;
+                width:150px;
+                height: auto;
+                margin-left: 45vw;
+                margin-top:-1px;
+            }
+            .btn:hover{
+                cursor:pointer;
+            }
+            #menu li{
+                display:inline;
+            }
+            #menu li img{
+                width:40px;
+                height:auto;
+            }
+            #help{
+                top: 1%;
+            }
+            table{
+                margin: auto;
+            }
+            #board{
+                margin-top: 10vh;
+            }
+            #keys{
+                margin-top: 2vw;
+            }
+           #board td div{
+                display:flex;
+                align-items:center;
+                justify-content:center;
+                width:57px;
+                height:57px;
+                border: 2px solid var(--tile-border);
+                color: var(--tile-text);
+                font-size: xx-large;
+                font-weight: 700;
+                font-family:'Inter', sans-serif;
+            }
+           #board .wrong{
+                border: 2px solid var(--wrong);
+                background-color: var(--wrong);
+                color:white;
+            }
+            #board .misplaced{
+                border: 2px solid var(--misplaced);
+                background-color: var(--misplaced);
+                color:white;
+            }
+           #board .correct{
+                border: 2px solid var(--correct);
+                background-color: var(--correct);
+                color:white;
+            }
+            #board .guess{
+                border: 2px solid var(--tile-guess-border);
+                color: var(--tile-text);
+            }
+           #board td{
+                padding: 2px;
+            }
+            .keybd{
+                margin:auto;
+            }
+            .keybd:hover{
+                cursor:pointer;
+            }
+            .keybd div{
+                display:flex;
+                align-items:center;
+                justify-content:center;
+                width:43px;
+                height:60px;
+                border-radius: 5px;
+                background-color: var(--key-bg);
+                color: var(--key-text);
+                font-size: 20px;
+                font-weight: 700;
+                font-family:'Inter', sans-serif;
+            }
+            .keybd .cor{
+                background-color: var(--correct);
+                color: white;
+            }
+            .keybd .wro{
+                background-color: var(--wrong);
+                color:white;
+            }
+            .keybd .mis{
+                background-color: var(--misplaced);
+                color:white;
+            }
+            .keybd td{
+                padding: 1.75px;
+            }
+          .keybd .long{
+                width: 60px;
+                font-size: 12px;
+            }
+            #menu-window{
+                display: block;
+                position: fixed;
+                top: 43px;
+                left: 0;
+                width: 100%;
+                height: calc(100vh - 43px);
+                border: none;
+                visibility:hidden;
+                z-index: 100;
+                background: var(--bg, white);
+            }
+            #try-again {
+                display: none;
+                margin: 20px auto;
+                padding: 12px 30px;
+                font-family: 'American Typewriter';
+                font-size: 18px;
+                background-color: var(--btn-bg);
+                color: var(--btn-text);
+                border: none;
+                border-radius: 40px;
+                cursor: pointer;
+            }
+            #try-again:hover {
+                background-color: var(--btn-hover);
+            }
+            .center-wrap {
+                text-align: center;
+            }
+            #game-over-msg {
+                display: none;
+                font-family: 'American Typewriter';
+                font-size: 20px;
+                text-align: center;
+                margin: 10px 0;
+                color: var(--msg-color);
+            }
+        </style>
+
+        <script>
+            function setTheme(theme) {
+                document.documentElement.setAttribute('data-theme', theme);
+                var imgs = {'header-logo': 'headerLogo', stats: 'stBtn', help: 'hlpBtn', set: 'setBtn'};
+                var suffix = theme === 'dark' ? '2' : '';
+                for (var id in imgs) {
+                    document.getElementById(id).src = 'images/' + imgs[id] + suffix + '.png';
+                }
+            }
+
+            (function() {
+                let theme = localStorage.getItem('theme') || 'light';
+                setTheme(theme);
+            })();
+
+            window.addEventListener('message', function(e) {
+                if (e.data && e.data.theme) {
+                    setTheme(e.data.theme);
+                    var frames = document.querySelectorAll('iframe');
+                    for (var f = 0; f < frames.length; f++) {
+                        frames[f].contentWindow.postMessage({theme: e.data.theme}, '*');
+                    }
+                }
+            });
+
+            let win = false;
+            let secretWord = "GHOST";
+            let guessNum = 0;
+            let guessWord = '';
+            let cells = [ ["r1-c1", "r1-c2","r1-c3", "r1-c4", "r1-c5"],
+            ["r2-c1", "r2-c2","r2-c3", "r2-c4", "r2-c5"],
+            ["r3-c1", "r3-c2","r3-c3", "r3-c4", "r3-c5"], 
+            ["r4-c1", "r4-c2","r4-c3", "r4-c4", "r4-c5"],
+            ["r5-c1", "r5-c2","r5-c3", "r5-c4", "r5-c5"],
+            ["r6-c1", "r6-c2","r6-c3", "r6-c4", "r6-c5"] ];
+
+            function showMenu(id)
+            {
+                let menScreen =  document.getElementById('menu-window');
+                menScreen.src = id + '.html';
+                if(menScreen.style.visibility =='hidden')
+                {
+                    menScreen.style.visibility ='visible'
+                }
+                else
+                {
+                   menScreen.style.visibility ='hidden'
+                }
+               
+            }
+
+            async function getWord()
+            {
+                 let wordRes = await fetch('/api/word/random');
+                 let data = await wordRes.json();
+                 secretWord = data.word;
+            }
+
+            let gameOver = false;
+
+            function addKeyBd(letter)
+            {
+                if(gameOver) return;
+                if(letter != "BKSP" && guessNum <= 5)
+                {
+                    if(guessWord.length <= 5)
+                    {
+                        guessWord += letter;
+                    }
+                    for(let i = 0; i < guessWord.length; i++)
+                    {
+                    let cell = document.getElementById(cells[guessNum][i]);
+                    cell.textContent = guessWord.charAt(i);
+                    cell.className = "guess";
+                    }
+                }
+                else
+                {
+                    if(guessWord.length > 0)
+                    {
+                        let bksp = guessWord.length - 1;
+                        let cell = document.getElementById(cells[guessNum][bksp]);
+                        guessWord = guessWord.replace(guessWord.charAt(bksp),"");
+                        cell.textContent = "";
+                        cell.className = "";
+                        
+                    }
+                  
+                    
+                }
+
+            }
+
+            async function enterKey()
+            {
+                if(gameOver) return;
+                if(guessWord.length == 5 && win == false)
+                {
+                    let res = await fetch('/api/word/validate/' + guessWord);
+                    let data = await res.json();
+                    if (!data.valid) {
+                        alert("Not a valid word");
+                        return;
+                    }
+                    let word = secretWord;
+                   
+                    checkEntry(word,guessWord,guessNum);
+                    if(guessNum < 5)
+                    {
+                        guessNum++;
+                        guessWord ="";
+                    }
+                }
+
+            }
+
+            function checkEntry(word,word2,num)
+            {
+                let chars = "";
+                for(var i =  0; i < 5; i++)
+                {
+                    let cell = document.getElementById(cells[num][i]);
+                    
+                    let charCount = word.match(cell.textContent);
+                    let key = document.getElementById(cell.textContent);
+                    if(cell.textContent == word.charAt(i))
+                    {
+                        cell.className = "correct";
+                        key.className = "cor";
+                        chars += cell.textContent;
+                    }
+                   
+                    else
+                    {
+                        for(var e = word.length; e >= 0; e--)
+                        {
+                            
+                            if(cell.textContent == word.charAt(e))
+                            {
+                                chars += cell.textContent;
+                                let letter = cell.textContent;
+                                if(misplaced(chars,word,letter))
+                                {
+                                    cell.className = "misplaced";
+                                    key.className = "mis";
+                                   
+                                }
+                            
+                            }
+                           if(cell.className != "misplaced")
+                            {
+                                    cell.className = "wrong";
+                                    let k = new RegExp(key.texContent,"g");
+                                    console.log(k.test(word));
+                                    if(k.test(word) == true)
+                                    {
+                                        key.className = "wro";
+
+                                    }
+                                    
+                            }
+                            
+                        }
+
+                       
+                    }
+                 
+                    
+                }
+
+                if(document.getElementById(cells[num][0]).className == "correct" && document.getElementById(cells[num][1]).className == "correct"
+                 && document.getElementById(cells[num][2]).className == "correct" && document.getElementById(cells[num][3]).className == "correct"
+                && document.getElementById(cells[num][4]).className == "correct")
+                {
+                    win = true;
+                    endGame("You won! Nice job!");
+                    return;
+                }
+
+                if(num == 5 && !win)
+                {
+                    endGame("The word was: " + word);
+                }
+            }
+
+            function endGame(msg)
+            {
+                gameOver = true;
+                document.getElementById('game-over-msg').textContent = msg;
+                document.getElementById('game-over-msg').style.display = 'block';
+                document.getElementById('try-again').style.display = 'inline-block';
+
+                var userData = localStorage.getItem('wordie_user');
+                if (userData) {
+                    var user = JSON.parse(userData);
+                    var guessCount = guessNum + 1;
+                    fetch('/api/games', {
+                        method: 'POST',
+                        headers: {'Content-Type': 'application/json'},
+                        body: JSON.stringify({userId: user.id, won: win, guessNum: guessCount})
+                    }).then(function(r) { return r.json(); }).then(function(updated) {
+                        localStorage.setItem('wordie_user', JSON.stringify(updated));
+                    }).catch(function() {});
+                }
+            }
+
+            async function tryAgain()
+            {
+                win = false;
+                gameOver = false;
+                guessNum = 0;
+                guessWord = '';
+                document.getElementById('game-over-msg').style.display = 'none';
+                document.getElementById('try-again').style.display = 'none';
+                for(let r = 0; r < 6; r++)
+                {
+                    for(let c = 0; c < 5; c++)
+                    {
+                        let cell = document.getElementById(cells[r][c]);
+                        cell.textContent = '';
+                        cell.className = '';
+                    }
+                }
+                let keys = document.querySelectorAll('.keybd div');
+                for(let k of keys) {
+                    if(k.classList.contains('long')) {
+                        k.className = 'long';
+                    } else {
+                        k.className = '';
+                    }
+                }
+                await getWord();
+            }
+
+            function misplaced(ch,wo,le){
+                let reg = new RegExp(le,"g");
+                let op1 = ch.match(reg);
+                let op2 = wo.match(reg);
+
+                if(op1.length <= op2.length)
+                {
+                        return true;
+                }
+                else
+                {
+                    return false;
+                }
+               
+            }
+
+        </script>
+
+        <body onload="javascript:getWord()">
+            <iframe id="menu-window" src="stats.html"></iframe>
+          <table id="board">
+                <tr class="row-1">
+                    <td><div id="r1-c1" class=""></div></td>
+                    <td><div id="r1-c2" class=""></div></td>
+                    <td><div id="r1-c3" class=""></div></td>
+                    <td><div id="r1-c4" class=""></div></td>
+                    <td><div id="r1-c5" class=""></div></td>
+                </tr>
+                <tr class="row-2">
+                    <td><div id="r2-c1" class=""></div></td>
+                    <td><div id="r2-c2" class=""></div></td>
+                    <td><div id="r2-c3" class=""></div></td>
+                    <td><div id="r2-c4" class=""></div></td>
+                    <td><div id="r2-c5" class=""></div></td>
+                </tr>
+                <tr class="row-3">
+                    <td><div id="r3-c1" class=""></div></td>
+                    <td><div id="r3-c2" class=""></div></td>
+                    <td><div id="r3-c3" class=""></div></td>
+                    <td><div id="r3-c4" class=""></div></td>
+                    <td><div id="r3-c5" class=""></div></td>
+                </tr>
+                <tr class="row-4">
+                    <td><div id="r4-c1" class=""></div></td>
+                    <td><div id="r4-c2" class=""></div></td>
+                    <td><div id="r4-c3" class=""></div></td>
+                    <td><div id="r4-c4" class=""></div></td>
+                    <td><div id="r4-c5" class=""></div></td>
+                </tr>
+                <tr class="row-5">
+                    <td><div id="r5-c1" class=""></div></td>
+                    <td><div id="r5-c2" class=""></div></td>
+                    <td><div id="r5-c3" class=""></div></td>
+                    <td><div id="r5-c4" class=""></div></td>
+                    <td><div id="r5-c5" class=""></div></td>
+                </tr>
+                <tr class="row-6">
+                    <td><div id="r6-c1" class=""></div></td>
+                    <td><div id="r6-c2" class=""></div></td>
+                    <td><div id="r6-c3" class=""></div></td>
+                    <td><div id="r6-c4" class=""></div></td>
+                    <td><div id="r6-c5" class=""></div></td>
+                </tr>
+          </table>
+
+          <div id="keys">
+            <table class="keybd">
+                <tr class="key-row">
+                    <td><div id="Q" class="" onclick="javascript:addKeyBd('Q')">Q</div></td>
+                    <td><div id="W" class="" onclick="javascript:addKeyBd('W')">W</div></td>
+                    <td><div id="E" class="" onclick="javascript:addKeyBd('E')">E</div></td>
+                    <td><div id="R" class="" onclick="javascript:addKeyBd('R')">R</div></td>
+                    <td><div id="T" class="" onclick="javascript:addKeyBd('T')">T</div></td>
+                    <td><div id="Y" class="" onclick="javascript:addKeyBd('Y')">Y</div></td>
+                    <td><div id="U" class="" onclick="javascript:addKeyBd('U')">U</div></td>
+                    <td><div id="I" class="" onclick="javascript:addKeyBd('I')">I</div></td>
+                    <td><div id="O" class="" onclick="javascript:addKeyBd('O')">O</div></td>
+                    <td><div id="P" class="" onclick="javascript:addKeyBd('P')">P</div></td>
+                </tr>
+            </table>
+                <table class="keybd">
+                <tr class="key-row">
+                    <td><div id="A" class="" onclick="javascript:addKeyBd('A')">A</div></td>
+                    <td><div id="S" class="" onclick="javascript:addKeyBd('S')">S</div></td>
+                    <td><div id="D" class="" onclick="javascript:addKeyBd('D')">D</div></td>
+                    <td><div id="F" class="" onclick="javascript:addKeyBd('F')">F</div></td>
+                    <td><div id="G" class="" onclick="javascript:addKeyBd('G')">G</div></td>
+                    <td><div id="H" class="" onclick="javascript:addKeyBd('H')">H</div></td>
+                    <td><div id="J" class="" onclick="javascript:addKeyBd('J')">J</div></td>
+                    <td><div id="K" class="" onclick="javascript:addKeyBd('K')">K</div></td>
+                    <td><div id="L" class="" onclick="javascript:addKeyBd('L')">L</div></td>
+                </tr>
+            </table>
+            <table class="keybd">
+                <tr class="key-row">
+                    <td><div class="long" onclick="javascript:enterKey()">ENTER</div></td>
+                    <td><div id="Z" class="" onclick="javascript:addKeyBd('Z')">Z</div></td>
+                    <td><div id="X" class="" onclick="javascript:addKeyBd('X')">X</div></td>
+                    <td><div id="C" class="" onclick="javascript:addKeyBd('C')">C</div></td>
+                    <td><div id="V" class="" onclick="javascript:addKeyBd('V')">V</div></td>
+                    <td><div id="B" class="" onclick="javascript:addKeyBd('B')">B</div></td>
+                    <td><div id="N" class="" onclick="javascript:addKeyBd('N')">N</div></td>
+                    <td><div id="M" class="" onclick="javascript:addKeyBd('M')">M</div></td>
+                    <td><div class="long" onclick="javascript:addKeyBd('BKSP')">BKSP</div></td>
+                </tr>
+            </table>
+        </div>
+            <p id="game-over-msg"></p>
+            <div class="center-wrap">
+                <button id="try-again" onclick="tryAgain()">Try Again</button>
+        </body>
+        <footer>
+
+        </footer>
+</html>

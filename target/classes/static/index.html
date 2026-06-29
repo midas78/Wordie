@@ -1,0 +1,130 @@
+<html>
+    <head>
+        <title>Wordie - A game of words</title>
+        <link rel="icon" type="image/png" href="images/favicon.png">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap" rel="stylesheet">
+        <style>
+            :root {
+                --bg: #ffffff;
+                --text: black;
+                --btn-login-bg: white;
+                --btn-play-bg: black;
+                --btn-play-text: white;
+                --btn-border: black;
+            }
+            [data-theme="dark"] {
+                --bg: #121213;
+                --text: white;
+                --btn-login-bg: #1a1a1b;
+                --btn-play-bg: white;
+                --btn-play-text: black;
+                --btn-border: white;
+            }
+            p{
+               margin-top: 35px;
+               text-align: center;
+               font-family: 'American Typewriter';
+               font-size: x-large;
+               font-weight:normal;
+               color: var(--text);
+            }
+            body{
+                align-content:center;
+                margin: auto;
+                background-color: var(--bg);
+                min-height: 100vh;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+            }
+            img{
+                display:block;
+                width:200px;
+                height:auto;
+                margin: auto;
+            }
+            .input{
+                display:flex;
+                align-items:center;
+                justify-content:center;
+                width: 140px;
+                height:40px;
+                border: 1px solid var(--btn-border);
+                border-radius: 40px;
+                font-family: 'Inter', sans-serif;
+                font-weight: 700;
+                text-decoration: none;
+            }
+            .input :active{
+                
+                text-decoration: none;
+            }
+            #buttons{
+                display:block;
+                margin: auto;
+                width:280px;
+
+            }
+            #pl{
+              
+                background-color: var(--btn-play-bg);
+                color: var(--btn-play-text);
+                margin-top: -42px;
+                margin-left:140px;
+              
+              
+            }
+            #li{
+                background-color: var(--btn-login-bg);
+                color: var(--text);
+                margin-left:-20px;
+               
+            }
+        </style>
+        <script>
+            (function() {
+                var t = localStorage.getItem('theme') || 'light';
+                document.documentElement.setAttribute('data-theme', t);
+            })();
+            function playGame() {
+                var userData = localStorage.getItem('wordie_user');
+                var oldGuest = null;
+                if (userData) {
+                    var u = JSON.parse(userData);
+                    if (u.isGuest) oldGuest = u.username;
+                }
+                fetch('/api/users/guest', {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify({oldGuestUsername: oldGuest})
+                }).then(function(r) { return r.json(); }).then(function(data) {
+                    data.isGuest = true;
+                    localStorage.setItem('wordie_user', JSON.stringify(data));
+                    window.location.href = 'game.html';
+                });
+            }
+        </script>
+    </head>
+
+        <header>
+
+        </header>
+
+            <body>
+                <img id="home-logo" src="images/homeLogo.png" alt="splash">
+                <script>(function(){var t=localStorage.getItem('theme')||'light';var e=document.querySelector('#home-logo');if(e)e.src='images/homeLogo'+(t==='dark'?'2':'')+'.png';})();</script>
+                <p>Get 6 chances to guess<br/> a 5-letter word.</p>
+                <div id="buttons">
+                    <a id="li" class="input" href="login.html">Login</a>
+                    <a id="pl" class="input" href="#" onclick="playGame(); return false;">Play</a>
+                </div>
+                   
+                
+            </body>
+
+                <footer>
+
+                </footer>
+</html>

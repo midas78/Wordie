@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Wordie - Login</title>
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <style>
+        :root {
+            --bg: #E3E3E1;
+            --card-bg: white;
+            --text: black;
+            --border: #D6D9DD;
+            --input-bg: white;
+            --btn-primary-bg: black;
+            --btn-primary-text: white;
+            --btn-secondary-bg: white;
+            --btn-secondary-text: black;
+        }
+        [data-theme="dark"] {
+            --bg: #121213;
+            --card-bg: #1a1a1b;
+            --text: white;
+            --border: #3a3a3c;
+            --input-bg: #2a2a2b;
+            --btn-primary-bg: white;
+            --btn-primary-text: black;
+            --btn-secondary-bg: #2a2a2b;
+            --btn-secondary-text: white;
+        }
+        body {
+            margin: 0;
+            min-height: 100vh;
+            background: var(--bg);
+            font-family: 'American Typewriter';
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .card {
+            background: var(--card-bg);
+            padding: 30px 35px;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            width: 300px;
+        }
+        h1 {
+            text-align: center;
+            color: var(--text);
+            font-size: 26px;
+            margin-top: 0;
+            margin-bottom: 25px;
+        }
+        label {
+            color: var(--text);
+            font-size: 14px;
+            display: block;
+            margin-bottom: 4px;
+        }
+        input {
+            width: 100%;
+            padding: 10px 12px;
+            margin-bottom: 15px;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            font-family: 'American Typewriter';
+            font-size: 15px;
+            background: var(--input-bg);
+            color: var(--text);
+            box-sizing: border-box;
+            outline: none;
+        }
+        input:focus {
+            border-color: var(--text);
+        }
+        .btn {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid var(--border);
+            border-radius: 40px;
+            font-family: 'American Typewriter';
+            font-size: 16px;
+            cursor: pointer;
+            box-sizing: border-box;
+            text-align: center;
+        }
+        .btn-primary {
+            background: var(--btn-primary-bg);
+            color: var(--btn-primary-text);
+            border-color: var(--btn-primary-bg);
+            margin-bottom: 10px;
+        }
+        .btn-secondary {
+            background: var(--btn-secondary-bg);
+            color: var(--btn-secondary-text);
+        }
+        .btn:hover { opacity: 0.85; }
+        .error {
+            color: #dc2626;
+            font-size: 13px;
+            text-align: center;
+            margin-bottom: 10px;
+            min-height: 18px;
+        }
+        .success {
+            color: #16a34a;
+            font-size: 13px;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+        .back {
+            display: block;
+            text-align: center;
+            margin-top: 18px;
+            color: var(--text);
+            font-size: 14px;
+            text-decoration: none;
+            opacity: 0.6;
+        }
+        .back:hover { opacity: 1; }
+        .logo {
+            display: block;
+            width: 80px;
+            margin: 0 auto 20px auto;
+        }
+    </style>
+    <script>
+        (function() {
+            function apply(t) {
+                document.documentElement.setAttribute('data-theme', t);
+                var logo = document.querySelector('.logo');
+                if (logo) logo.src = 'images/headerLogo' + (t === 'dark' ? '2' : '') + '.png';
+            }
+            apply(localStorage.getItem('theme') || 'light');
+            window.addEventListener('message', function(e) {
+                if (e.data && e.data.theme) apply(e.data.theme);
+            });
+        })();
+    </script>
+</head>
+<body>
+    <div class="card">
+        <img class="logo" src="images/headerLogo.png" alt="Wordie">
+        <h1>Login</h1>
+        <div id="error" class="error"></div>
+        <div id="success" class="success"></div>
+        <label for="username">Username</label>
+        <input id="username" type="text" autocomplete="username">
+        <label for="password">Password</label>
+        <input id="password" type="password" autocomplete="current-password">
+        <button class="btn btn-primary" onclick="login()">Login</button>
+        <button class="btn btn-secondary" onclick="register()">Create Account</button>
+        <a class="back" href="index.html">Back to home</a>
+    </div>
+    <script>
+        function setMessage(el, msg, type) {
+            el.textContent = msg;
+            el.className = type;
+        }
+
+        async function login() {
+            var username = document.getElementById('username').value.trim();
+            var password = document.getElementById('password').value;
+            var err = document.getElementById('error');
+            var suc = document.getElementById('success');
+            setMessage(err, '', 'error');
+            setMessage(suc, '', 'success');
+
+            if (!username || !password) {
+                setMessage(err, 'Please fill in all fields', 'error');
+                return;
+            }
+
+            var res = await fetch('/api/users/login', {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({username: username, password: password})
+            });
+            var data = await res.json();
+
+            if (!res.ok) {
+                setMessage(err, data.error || 'Login failed', 'error');
+                return;
+            }
+
+            localStorage.setItem('wordie_user', JSON.stringify(data));
+            window.location.href = 'game.html';
+        }
+
+        async function register() {
+            var username = document.getElementById('username').value.trim();
+            var password = document.getElementById('password').value;
+            var err = document.getElementById('error');
+            var suc = document.getElementById('success');
+            setMessage(err, '', 'error');
+            setMessage(suc, '', 'success');
+
+            if (!username || !password) {
+                setMessage(err, 'Please fill in all fields', 'error');
+                return;
+            }
+            if (password.length < 3) {
+                setMessage(err, 'Password must be at least 3 characters', 'error');
+                return;
+            }
+
+            var res = await fetch('/api/users/register', {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({username: username, password: password})
+            });
+            var data = await res.json();
+
+            if (!res.ok) {
+                setMessage(err, data.error || 'Registration failed', 'error');
+                return;
+            }
+
+            setMessage(suc, 'Account created! Logging in...', 'success');
+            localStorage.setItem('wordie_user', JSON.stringify(data));
+            setTimeout(function() { window.location.href = 'game.html'; }, 400);
+        }
+
+        document.getElementById('username').addEventListener('keydown', function(e) {
+            if (e.key === 'Enter') login();
+        });
+        document.getElementById('password').addEventListener('keydown', function(e) {
+            if (e.key === 'Enter') login();
+        });
+    </script>
+</body>
+</html>

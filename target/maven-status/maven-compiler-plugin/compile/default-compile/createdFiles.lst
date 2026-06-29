@@ -1,0 +1,14 @@
+com/wordie/config/DataLoader.class
+com/wordie/config/WebConfig$1.class
+com/wordie/repository/GameRepository.class
+com/wordie/repository/WordRepository.class
+com/WordieApplication.class
+com/wordie/model/AppUser.class
+com/wordie/controller/GameController.class
+com/wordie/model/Game.class
+com/wordie/repository/UserRepository.class
+com/wordie/config/WebConfig.class
+com/wordie/service/WordService.class
+com/wordie/controller/WordController.class
+com/wordie/controller/UserController.class
+com/wordie/model/Word.class
